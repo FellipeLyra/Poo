@@ -1,17 +1,29 @@
-class conta {
+class Conta {
     double saldo;
-    public double getsaldo(){
+
+    public double getsaldo() {
         return this.saldo;
     }
-    void depositar(double quantidade){
+
+    void depositar(double quantidade) {
         this.saldo += quantidade;
     }
-    void sacar (double quantidade){
+
+    void sacar(double quantidade) {
         double novoSaldo = this.saldo - quantidade;
-        this.saldo= novoSaldo;
+        this.saldo = novoSaldo;
     }
-    void transfere(conta destino, double valor) {
+
+    Cliente c = new Cliente();
+
+    void transfere(Conta nConta, double valor) {
         this.saldo = this.saldo - valor;
-        destino.saldo = destino.saldo + valor;
+        nConta.saldo = nConta.saldo + valor;
+        if (this.saldo < valor) {
+            System.out.println("Saldo insuficiente para a operação");
+        } else {
+            this.saldo = this.saldo - valor;
+            System.out.println("Transferido o valor de " + this.saldo);
+        }
     }
 }
