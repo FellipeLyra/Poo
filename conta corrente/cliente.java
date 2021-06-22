@@ -1,27 +1,48 @@
 import java.util.ArrayList;
-class cliente {
+
+public class Cliente {
     String nome;
-    double cpf;
-    int nconta;
-    void dados(String nome, int cpf, int nconta){
-        this.nome=nome;
-        this.cpf=cpf;
-        this.nconta=nconta;
+    String cpf;
+    String nconta;
+    String x, y, z;
+
+    public Cliente(String nome, String cpf, String nconta) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.nconta = nconta;
     }
-    public String getNome(){
+
+    public Cliente() {
+    }
+
+    public String getNome() {
         return nome;
     }
-    public void setNome(String nome){
-        this.nome=nome;
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
-    public void getCpf(int cpf){
-        this.cpf=cpf;
+
+    public String getCpf() {
+        return cpf;
     }
-    public void getNconta(int nconta){
-        this.nconta=nconta;
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
-    ArrayList <cliente> c = new ArrayList();
-    public void cadastrarc(cliente cn){
-        c.add(cn);
+
+    public String getNconta() {
+        return nconta;
+    }
+
+    public void setNconta(String nconta) {
+        this.nconta = nconta;
+    }
+
+    public void criarBanco() {
+        ArrayList<Cliente> lista = new ArrayList<Cliente>();
+        // Cliente c1 = new Cliente("Maria", "921.427.654-58", "453");
+        Cliente c1 = new Cliente(nome, cpf, nconta);
+        lista.add(c1);
     }
 }
